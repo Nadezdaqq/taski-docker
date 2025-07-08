@@ -8,6 +8,7 @@ FROM python:3.9
 WORKDIR /app
 # Дальнейшие инструкции будут выполняться в директории /app
 
+RUN pip install gunicorn==20.1.0
 # Скопировать с локального компьютера файл зависимостей
 # в текущую директорию (текущая директория — это /app).
 COPY requirements.txt .
@@ -15,7 +16,6 @@ COPY requirements.txt .
 # Выполнить в текущей директории команду терминала
 # для установки зависимостей.
 RUN pip install -r requirements.txt --no-cache-dir
-RUN pip install gunicorn==20.1.0
 
 # Скопировать всё необходимое содержимое 
 # той директории локального компьютера, где сохранён Dockerfile,
