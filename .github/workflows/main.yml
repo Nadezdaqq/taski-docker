@@ -6,6 +6,28 @@ on:
       - main
 
 jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cleanup Docker images
+      run: |
+        echo "=== Before cleanup ==="
+        docker system df
+        
+        echo "=== Removing unused containers ==="
+        docker container prune -f
+        
+        echo "=== Removing dangling images ==="
+        docker image prune -f
+        
+        echo "=== Removing unused networks ==="
+        docker network prune -f
+        
+        echo "=== Full system prune ==="
+        docker system prune -a -f --volumes
+        
+        echo "=== After cleanup ==="
+        docker system df
   tests:
     runs-on: ubuntu-latest
     # Блок services аналогичен docker-compose.yml
