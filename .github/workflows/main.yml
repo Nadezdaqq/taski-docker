@@ -138,7 +138,7 @@ jobs:
           🚀 *Taski Deployment Successful*
           --------------------------
           *Repository*: [${{ github.repository }}](https://github.com/${{ github.repository }})
-          *Commit*: [${{ format('{0:.7}', github.sha) }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+          *Commit*: [${{ format('{0:7}', github.sha) }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
           *Workflow*: [${{ github.workflow }} #${{ github.run_number }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
       env:
         TELEGRAM_PARSE_MODE: "Markdown"
