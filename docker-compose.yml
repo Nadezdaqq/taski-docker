@@ -15,7 +15,7 @@ services:
     build: ./backend/
     env_file: .env
     environment:
-      - ALLOWED_HOSTS=$ALLOWED_HOSTS
+      - ALLOWED_HOSTS=trickytaki.gotdns.ch,localhost,backend
     volumes:
       - static:/backend_static
 
