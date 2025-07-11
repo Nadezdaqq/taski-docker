@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['trickytaki.gotdns.ch', 'localhost', 'backend']
 
@@ -130,10 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
-]
-
-
-CORS_ALLOWED_ORIGINS = [
-    "https://trickytaki.gotdns.ch",
-    "http://localhost"
 ]
